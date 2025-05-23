@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { fetchProducts } from '../services/api';
-import { addToCart } from '../services/api';
+import { fetchProducts } from '../../services/api';
+import { addToCart } from '../../services/api';
+import { addItem } from '../../features/cart/cartSlice';
 import { useDispatch } from 'react-redux';
-import { addItem } from '../features/cart/cartSlice';
 
 const ProductList = ({ userId }) => {
   const [products, setProducts] = useState([]);

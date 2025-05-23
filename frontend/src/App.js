@@ -2,8 +2,8 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ProductList from './components/ProductList';
-import ShoppingCart from './components/ShoppingCart';
+import ProductList from './components/products/ProductList';
+import ShoppingCart from './components/./cart/ShoppingCart';
 import './App.css';
 
 function App() {
