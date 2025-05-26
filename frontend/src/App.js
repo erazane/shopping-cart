@@ -3,31 +3,33 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ProductList from './components/products/ProductList';
-import ShoppingCart from './components/./cart/ShoppingCart';
+import ProductCard from './components/products/ProductCard';
+// import ShoppingCart from './components/./cart/ShoppingCart';
 import './App.css';
+import Header from './components/common/Header';
+import Footer from './components/common/Footer';
+
 
 function App() {
-  // In a real app, you would get userId from authentication
-  const userId = 'user123'; // Temporary hardcoded user ID
+  const userId = 'user123';
 
   return (
     <Provider store={store}>
       <Router>
+        <Header /> {/* ⬅️ moved here */}
         <div className="app">
-          <header>
-            <h1>MERN E-Commerce</h1>
-          </header>
           <main>
             <Routes>
               <Route path="/" element={
                 <>
                   <ProductList userId={userId} />
-                  <ShoppingCart userId={userId} />
+                  {/* <ShoppingCart userId={userId} /> */}
                 </>
               } />
             </Routes>
           </main>
         </div>
+        <Footer /> {/* Optional: You can keep this outside or inside 'app' too */}
       </Router>
     </Provider>
   );
